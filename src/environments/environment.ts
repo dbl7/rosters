@@ -4,6 +4,16 @@
 
 export const environment = {
   production: false,
+  firebase: {
+    apiKey: 'AIzaSyA8q87PrVCzIkhiwdYl8GgY5e5auYg16v0',
+    authDomain: 'rosters-73e4e.firebaseapp.com',
+    databaseURL: 'https://rosters-73e4e.firebaseio.com',
+    projectId: 'rosters-73e4e',
+    storageBucket: 'rosters-73e4e.appspot.com',
+    messagingSenderId: '289091668054',
+    appId: '1:289091668054:web:673988c586e89a4dcc93f7',
+    measurementId: 'G-S7ZB9GZ7DW',
+  },
 };
 
 /*
