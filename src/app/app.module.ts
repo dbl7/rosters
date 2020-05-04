@@ -7,15 +7,11 @@ import { environment } from 'src/environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TrainingComponent } from './training/training.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-  ],
+  declarations: [AppComponent, TrainingComponent],
+  imports: [BrowserModule, AppRoutingModule, AngularFireModule.initializeApp(environment.firebase), AngularFirestoreModule],
   providers: [],
   bootstrap: [AppComponent],
 })
