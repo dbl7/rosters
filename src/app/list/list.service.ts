@@ -9,9 +9,9 @@ import { List } from './models/list.model';
   providedIn: 'root',
 })
 export class ListService {
-  public lists$: Observable<List[]>;
+  constructor(private firestore: AngularFirestore) {}
 
-  constructor(firestore: AngularFirestore) {
-    this.lists$ = firestore.collection<List>('lists').valueChanges();
+  public getLists$(): Observable<List[]> {
+    return this.firestore.collection<List>('lists').valueChanges();
   }
 }
