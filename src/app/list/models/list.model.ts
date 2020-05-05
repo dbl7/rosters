@@ -1,6 +1,5 @@
 export interface List {
   name: string;
-  isCurrent: boolean;
   items: ListItem[];
 }
 
