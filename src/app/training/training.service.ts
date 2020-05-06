@@ -15,6 +15,10 @@ export class TrainingService {
   public getCurrentList(): Observable<ListItem[]> {
     const activeListId = 'TGzEYTGsmhD0evpkPBB6'; // replace it with the real id from user database
 
-    return this.firestore.doc<List>(`lists/${activeListId}`).collection<ListItem>('items').valueChanges().pipe(first());
+    return this.firestore
+      .doc<List>(`lists/${activeListId}`)
+      .collection<ListItem>('items')
+      .valueChanges()
+      .pipe(first());
   }
 }

@@ -11,7 +11,12 @@ import { TrainingComponent } from './training/training.component';
 
 @NgModule({
   declarations: [AppComponent, TrainingComponent],
-  imports: [BrowserModule, AppRoutingModule, AngularFireModule.initializeApp(environment.firebase), AngularFirestoreModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

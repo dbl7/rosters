@@ -14,7 +14,7 @@
     "import-blacklist": [true, "rxjs/Rx"],
     "interface-name": false,
     "max-classes-per-file": false,
-    "max-line-length": [true, 140],
+    "max-line-length": [true, 100],
     "member-access": true,
     "member-ordering": [
       true,
@@ -61,7 +61,13 @@
     "await-promise": true,
     "no-async-without-await": true,
     "no-conditional-assignment": true,
-    "typedef": [true, "call-signature", "parameter", "property-declaration", "member-variable-declaration"]
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter",
+      "property-declaration",
+      "member-variable-declaration"
+    ]
   },
   "rulesDirectory": ["codelyzer"]
 }
