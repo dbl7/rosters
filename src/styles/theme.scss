@@ -1,0 +1,44 @@
+@import "variables";
+
+@function rs-theme-foreground($color) {
+  @return (base: $color);
+}
+
+// Define a mixin that accepts a theme and outputs the theme-specific styles.
+
+// Define a custom typography config that overrides the font-family
+/* stylelint-disable max-line-length */
+$rs-typography: mat-typography-config(
+  $body-1: mat-typography-level(14px, 14px, 400),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$rs-primary: map-merge(mat-palette($mat-indigo), ());
+
+$rs-accent: map-merge(mat-palette($mat-pink), ());
+
+// The warn palette is optional (defaults to red).
+$rs-warn: map-merge(mat-palette($mat-red), ());
+
+// Create the theme object (a Sass map containing all of the palettes).
+$rs-theme: mat-light-theme($rs-primary, $rs-accent, $rs-warn);
+
+$foreground: map-get($rs-theme, foreground);
+$foreground: map_merge($foreground, rs-theme-foreground(#000000));
+$background: map-get($rs-theme, background);
+$background: map_merge(
+  $background,
+  (
+    app-bar: $white,
+  )
+);
+
+$rs-theme: map_merge(
+  $rs-theme,
+  (
+    foreground: $foreground,
+    background: $background,
+  )
+);

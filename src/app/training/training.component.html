@@ -1,4 +1,4 @@
 <ul>
   <li *ngFor="let phrase of phrases$ | async">{{ phrase.text }}</li>
 </ul>
-<button routerLink="/lists">go to all lists</button>
+<button mat-flat-button color="primary" routerLink="/lists">go to all lists</button>
