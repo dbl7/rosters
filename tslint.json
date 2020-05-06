@@ -69,5 +69,6 @@
       "member-variable-declaration"
     ]
   },
-  "rulesDirectory": ["codelyzer"]
+  "rulesDirectory": ["codelyzer"],
+  "defaultSeverity": "warning"
 }
