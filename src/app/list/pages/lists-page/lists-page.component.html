@@ -1,0 +1,3 @@
+<ul>
+  <li *ngFor="let list of lists$ | async" [routerLink]="[list.id]">{{ list.name }}</li>
+</ul>
