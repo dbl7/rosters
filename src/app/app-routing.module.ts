@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AuthGuard } from '@core/guards/auth/auth.guard';
+import { AuthGuard } from './auth/guards/auth/auth.guard';
 import { TrainingComponent } from './training/training.component';
 
 const routes: Routes = [
@@ -10,6 +10,7 @@ const routes: Routes = [
     path: 'lists',
     loadChildren: () => import('./list/list.module').then((m) => m.ListModule),
     canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
   },
   {
     path: 'auth',
