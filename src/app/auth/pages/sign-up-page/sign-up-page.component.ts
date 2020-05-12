@@ -3,15 +3,15 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { CustomValidators } from '@core/validators/validators';
 import { CrossFieldErrorMatcher } from '@core/error-matchers/error-matchers';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../../auth.service';
 
 @Component({
-  selector: 'rs-sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.scss'],
+  selector: 'rs-sign-up-page',
+  templateUrl: './sign-up-page.component.html',
+  styleUrls: ['./sign-up-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SignUpComponent implements OnInit {
+export class SignUpPageComponent implements OnInit {
   public signUpForm: FormGroup;
   public showPassword: boolean = true;
   public showConfirmationPassword: boolean = true;

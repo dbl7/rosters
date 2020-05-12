@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
-import { LoginComponent } from './login/login.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
 
 const routes: Routes = [
   {
@@ -15,8 +15,8 @@ const routes: Routes = [
     path: '',
     component: AuthLayoutComponent,
     children: [
-      { path: 'login', component: LoginComponent },
-      { path: 'sign-up', component: SignUpComponent },
+      { path: 'login', component: LoginPageComponent },
+      { path: 'sign-up', component: SignUpPageComponent },
     ],
   },
 ];

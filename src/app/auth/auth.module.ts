@@ -6,11 +6,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppMaterialModule } from '@core/material/app-material.module';
 import { AuthRoutingModule } from './auth-routing.module';
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { LoginComponent } from './login/login.component';
+import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 @NgModule({
-  declarations: [AuthLayoutComponent, SignUpComponent, LoginComponent],
+  declarations: [AuthLayoutComponent, SignUpPageComponent, LoginPageComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
