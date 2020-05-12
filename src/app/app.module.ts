@@ -20,7 +20,7 @@ import { TrainingComponent } from './training/training.component';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    CoreModule.forRoot(),
+    CoreModule,
     BrowserAnimationsModule,
   ],
   providers: [],
