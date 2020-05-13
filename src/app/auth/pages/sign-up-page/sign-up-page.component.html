@@ -1,0 +1,44 @@
+<form [formGroup]="signUpForm" fxLayout="column" class="sign-up-form" (ngSubmit)="signUp()">
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput type="email" formControlName="email" />
+    <mat-error *ngIf="hasError('email', 'required')">Enter email</mat-error>
+    <mat-error *ngIf="hasError('email', 'email')">Invalid email</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput [type]="showPassword ? 'password' : 'text'" formControlName="password" />
+    <mat-error *ngIf="hasError('password', 'required')">Enter password</mat-error>
+    <mat-error *ngIf="hasError('password', 'minlength')">
+      Password must be at least 6 characters
+    </mat-error>
+    <button mat-icon-button matSuffix type="button" tabindex="1">
+      <mat-icon (click)="showPassword = !showPassword">
+        {{ showPassword ? 'visibility' : 'visibility_off' }}
+      </mat-icon>
+    </button>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Confirm password</mat-label>
+    <input
+      matInput
+      [type]="showConfirmationPassword ? 'password' : 'text'"
+      formControlName="confirmPassword"
+      [errorStateMatcher]="crossFieldErrorMatcher"
+    />
+    <mat-error *ngIf="hasError('confirmPassword', 'required')">
+      Enter password confirmation
+    </mat-error>
+    <mat-error *ngIf="signUpForm.hasError('match')">Passwords do not match</mat-error>
+    <button mat-icon-button matSuffix type="button" tabindex="1">
+      <mat-icon (click)="showConfirmationPassword = !showConfirmationPassword">
+        {{ showConfirmationPassword ? 'visibility' : 'visibility_off' }}
+      </mat-icon>
+    </button>
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" type="submit">Sign up</button>
+  <a mat-flat-button [routerLink]="['/auth', 'login']" fxFlex>Login</a>
+</form>

@@ -7,6 +7,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
 import { AppMaterialModule } from '@core/material/app-material.module';
+import { CoreModule } from '@core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TrainingComponent } from './training/training.component';
@@ -19,6 +20,7 @@ import { TrainingComponent } from './training/training.component';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    CoreModule,
     BrowserAnimationsModule,
   ],
   providers: [],
