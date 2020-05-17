@@ -1,19 +1,20 @@
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { environment } from '../environments/environment';
 
+import { AppComponent } from './app.component';
+
 import { AppMaterialModule } from '@core/material/app-material.module';
 import { CoreModule } from '@core/core.module';
+import { TrainingModule } from './training/training.module';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { TrainingComponent } from './training/training.component';
 
 @NgModule({
-  declarations: [AppComponent, TrainingComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppMaterialModule,
@@ -22,6 +23,7 @@ import { TrainingComponent } from './training/training.component';
     AngularFirestoreModule,
     CoreModule,
     BrowserAnimationsModule,
+    TrainingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

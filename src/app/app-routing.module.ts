@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AuthGuard } from './auth/guards/auth/auth.guard';
-import { TrainingComponent } from './training/training.component';
+import { TrainingPageComponent } from './training/pages/training-page/training-page.component';
 
 const routes: Routes = [
-  { path: '', component: TrainingComponent, canActivate: [AuthGuard] },
+  { path: '', component: TrainingPageComponent, canActivate: [AuthGuard] },
   {
     path: 'lists',
     loadChildren: () => import('./list/list.module').then((m) => m.ListModule),
