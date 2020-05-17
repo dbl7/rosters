@@ -8,7 +8,7 @@ import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 
-import { AppMaterialModule } from '@core/material/app-material.module';
+import { SharedModule } from '@shared/shared.module';
 import { CoreModule } from '@core/core.module';
 import { TrainingModule } from './training/training.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,7 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppMaterialModule,
+    SharedModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
