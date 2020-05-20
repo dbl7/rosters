@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
+
 import { Observable, of } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { map, switchMap, first } from 'rxjs/operators';
 
 import { User } from '@shared/models';
 
@@ -20,5 +21,13 @@ export class UserService {
 
   public isAuthenticated$(): Observable<boolean> {
     return this.user$.pipe(map((user) => !!user));
+  }
+
+  public setActiveList(listId: string): void {
+    this.user$.pipe(first()).subscribe(({ uid }) => {
+      this.firestore.doc(`users/${uid}`).update({
+        activeListId: listId,
+      });
+    });
   }
 }

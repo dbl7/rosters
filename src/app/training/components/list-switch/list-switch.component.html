@@ -1,0 +1,8 @@
+<div
+  class="list"
+  *ngFor="let list of lists"
+  [class.active]="list.isActive"
+  (click)="switchList(list)"
+>
+  {{ list.name }}
+</div>

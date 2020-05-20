@@ -1,4 +1,14 @@
-<rs-phrase-reviewer [phrases]="phrases$ | async"></rs-phrase-reviewer>
+<div class="sidenav">
+  <rs-list-switch
+    class="list-switch"
+    [lists]="lists$ | async"
+    (switch)="switchList($event)"
+  ></rs-list-switch>
+</div>
 
-<button mat-flat-button color="primary" routerLink="/lists">go to all lists</button>
-<button mat-flat-button (click)="logout()">Log out</button>
+<div class="phrases">
+  <rs-phrase-reviewer [phrases]="phrases$ | async"></rs-phrase-reviewer>
+
+  <button mat-flat-button color="primary" routerLink="/lists">go to all lists</button>
+  <button mat-flat-button (click)="logout()">Log out</button>
+</div>
