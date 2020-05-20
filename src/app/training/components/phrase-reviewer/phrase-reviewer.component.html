@@ -1,0 +1,5 @@
+<div *ngIf="phrase">
+  <h3>{{ phrase.text }}</h3>
+  <button mat-flat-button (click)="prevPhrase()">prev</button>
+  <button mat-flat-button (click)="nextPhrase()">next</button>
+</div>
