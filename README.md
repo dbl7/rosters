@@ -1,3 +1,5 @@
+https://travis-ci.org/dbl7/rosters.svg?branch=master
+
 # Rosters
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
