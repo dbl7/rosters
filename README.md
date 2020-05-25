@@ -1,4 +1,4 @@
-https://travis-ci.org/dbl7/rosters.svg?branch=master
+[![Build Status](https://travis-ci.org/dbl7/rosters.svg?branch=master)](https://travis-ci.org/dbl7/rosters)
 
 # Rosters
 
