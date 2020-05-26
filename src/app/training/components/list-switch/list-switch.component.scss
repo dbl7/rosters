@@ -1,0 +1,17 @@
+@import "variables.scss";
+
+:host {
+  display: block;
+}
+
+.list {
+  transform: rotate(180deg);
+  writing-mode: vertical-lr;
+  margin-top: 32px;
+  color: $gray-2;
+  cursor: pointer;
+
+  &.active {
+    color: $gray-3;
+  }
+}

@@ -5,15 +5,23 @@ import { Observable, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { List, ListItem } from './models/list.model';
+import { UserService } from '@core/services/user/user.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ListService {
-  constructor(private firestore: AngularFirestore) {}
+  constructor(private firestore: AngularFirestore, private userService: UserService) {}
 
   public getLists$(): Observable<List[]> {
-    return this.firestore.collection<List>('lists').valueChanges({ idField: 'id' });
+    return combineLatest([
+      this.firestore.collection<List>('lists').valueChanges({ idField: 'id' }),
+      this.userService.user$,
+    ]).pipe(
+      map(([lists, user]) => {
+        return lists.map((list) => ({ ...list, isActive: list.id === user.activeListId }));
+      }),
+    );
   }
 
   public getList$(id: string): Observable<List> {
