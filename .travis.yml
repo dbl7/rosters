@@ -10,4 +10,4 @@ before_script:
   - npm install -g @angular/cli
 script:
   - npm run lint
-  - npm run test --watch=false --browsers=ChromeHeadless
+  - npm run test-headless
