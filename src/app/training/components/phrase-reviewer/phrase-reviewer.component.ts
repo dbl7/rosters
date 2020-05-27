@@ -1,7 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input, OnChanges, SimpleChanges } from '@angular/core';
 
-import { ListItem } from '@app/list/models/list.model';
-
 @Component({
   selector: 'rs-phrase-reviewer',
   templateUrl: './phrase-reviewer.component.html',
@@ -9,9 +7,9 @@ import { ListItem } from '@app/list/models/list.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PhraseReviewerComponent implements OnChanges {
-  @Input() public phrases: ListItem[];
+  @Input() public phrases: string[];
 
-  public phrase: ListItem;
+  public phrase: string;
   private current: number;
 
   public ngOnChanges({ phrases }: SimpleChanges): void {
