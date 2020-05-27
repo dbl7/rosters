@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { ListItem, List } from '@app/list/models/list.model';
 import { AuthService } from '@app/auth/auth.service';
@@ -16,19 +17,21 @@ import { TrainingService } from '../../training.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TrainingPageComponent implements OnInit {
-  public phrases$: Observable<ListItem[]>;
+  public phrases$: Observable<string[]>;
   public lists$: Observable<List[]>;
 
   constructor(
     private trainingService: TrainingService,
-    private listSercice: ListService,
+    private listService: ListService,
     private authService: AuthService,
     private userService: UserService,
   ) {}
 
   public ngOnInit(): void {
-    this.phrases$ = this.trainingService.getCurrentList();
-    this.lists$ = this.listSercice.getLists$();
+    this.lists$ = this.listService.getLists$();
+    this.phrases$ = this.trainingService
+      .getCurrentList()
+      .pipe(map((phrases) => phrases.map((phrase) => phrase.text)));
   }
 
   public switchList(list: List): void {
