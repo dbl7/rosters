@@ -1,5 +1,11 @@
-<div *ngIf="phrase">
-  <h3>{{ phrase }}</h3>
-  <button mat-flat-button (click)="prevPhrase()">prev</button>
-  <button mat-flat-button (click)="nextPhrase()">next</button>
+<div class="phrase-reviewer" *ngIf="phrase" fxLayout="column">
+  <div class="current-phrase" fxFlex="grow">{{ phrase }}</div>
+  <div class="switch-buttons" fxLayout="row" fxLayoutAlign="space-between">
+    <button mat-icon-button aria-label="switch to the previous phrase" (click)="prevPhrase()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="switch to the next phrase" (click)="nextPhrase()">
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+  </div>
 </div>

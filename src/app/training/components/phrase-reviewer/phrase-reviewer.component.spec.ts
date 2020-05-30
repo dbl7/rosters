@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SimpleChange } from '@angular/core';
 
 import { PhraseReviewerComponent } from './phrase-reviewer.component';
+import { AppMaterialModule } from '@shared/material/app-material.module';
 
 const phrases = ['phrase 1', 'phrase 2', 'phrase 3'];
 
@@ -12,6 +13,7 @@ describe('PhraseReviewerComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [PhraseReviewerComponent],
+      imports: [AppMaterialModule],
     }).compileComponents();
   }));
 
