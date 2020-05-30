@@ -1,13 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AngularFireModule } from '@angular/fire';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { environment } from 'src/environments/environment';
-import { AppMaterialModule } from '@shared/material/app-material.module';
-
 import { SignUpPageComponent } from './sign-up-page.component';
+import { AppMaterialModule } from '@shared/material/app-material.module';
+import { AuthService } from '@app/auth/auth.service';
 
 describe('SignUpPageComponent', () => {
   let component: SignUpPageComponent;
@@ -16,13 +14,8 @@ describe('SignUpPageComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [SignUpPageComponent],
-      imports: [
-        NoopAnimationsModule,
-        AppMaterialModule,
-        AngularFireModule.initializeApp(environment.firebase),
-        ReactiveFormsModule,
-        RouterTestingModule,
-      ],
+      imports: [NoopAnimationsModule, AppMaterialModule, ReactiveFormsModule, RouterTestingModule],
+      providers: [{ provide: AuthService, useValue: { authService: () => {} } }],
     }).compileComponents();
   }));
 
