@@ -1,0 +1,19 @@
+@import "variables.scss";
+
+:host {
+  display: block;
+  text-align: center;
+}
+
+.list {
+  font-size: 18px;
+  line-height: 36px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  cursor: pointer;
+
+  &.active {
+    font-weight: bold;
+  }
+}
