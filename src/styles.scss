@@ -1,8 +1,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import "~@angular/material/theming";
-@import "styles/variables";
-@import "styles/theme";
+@import "assets/styles/main";
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -26,9 +25,4 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-.mat-icon-button.mat-button-base {
-  height: 44px;
-  width: 44px;
 }
