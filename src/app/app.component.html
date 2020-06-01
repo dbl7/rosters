@@ -1,1 +1,26 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container
+  *ngIf="isAuthenticated$ | async; else notAuthenticated"
+  [hasBackdrop]="false"
+>
+  <mat-sidenav #sidenav mode="over" role="menu">
+    <rs-menu (closeMenu)="sidenav.close()"></rs-menu>
+  </mat-sidenav>
+  <mat-sidenav-content fxLayout="column" role="main">
+    <button
+      class="menu-icon"
+      mat-icon-button
+      aria-label="menu"
+      fxFlex="noshrink"
+      (click)="sidenav.open()"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div fxFlex="grow">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<ng-template #notAuthenticated>
+  <router-outlet></router-outlet>
+</ng-template>

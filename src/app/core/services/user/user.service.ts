@@ -3,7 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 import { Observable, of } from 'rxjs';
-import { map, switchMap, first } from 'rxjs/operators';
+import { map, switchMap, first, filter } from 'rxjs/operators';
 
 import { User } from '@shared/models';
 
@@ -24,10 +24,15 @@ export class UserService {
   }
 
   public setActiveList(listId: string): void {
-    this.user$.pipe(first()).subscribe(({ uid }) => {
-      this.firestore.doc(`users/${uid}`).update({
-        activeListId: listId,
+    this.user$
+      .pipe(
+        first(),
+        filter(({ activeListId }) => activeListId !== listId),
+      )
+      .subscribe(({ uid }) => {
+        this.firestore.doc(`users/${uid}`).update({
+          activeListId: listId,
+        });
       });
-    });
   }
 }

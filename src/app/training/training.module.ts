@@ -6,10 +6,9 @@ import { SharedModule } from '@shared/shared.module';
 
 import { TrainingPageComponent } from './pages';
 import { PhraseReviewerComponent } from './components/phrase-reviewer/phrase-reviewer.component';
-import { ListSwitchComponent } from './components/list-switch/list-switch.component';
 
 @NgModule({
-  declarations: [TrainingPageComponent, PhraseReviewerComponent, ListSwitchComponent],
+  declarations: [TrainingPageComponent, PhraseReviewerComponent],
   imports: [CommonModule, RouterModule, SharedModule],
   exports: [TrainingPageComponent],
 })

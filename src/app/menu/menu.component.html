@@ -1,0 +1,22 @@
+<div class="menu-header" fxLayoutAlign="space-between">
+  <button mat-icon-button aria-label="close menu" (click)="close()">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <button mat-icon-button aria-label="settings">
+    <mat-icon>settings</mat-icon>
+  </button>
+</div>
+
+<rs-list-switch
+  class="list-switch"
+  [lists]="lists$ | async"
+  (switch)="switchList($event)"
+></rs-list-switch>
+
+<div class="actions" fxLayout="column" fxLayoutGap="8px">
+  <button mat-flat-button color="primary" aria-label="Add a new phrase">Add a new phrase</button>
+  <button mat-button color="primary" aria-label="Manage lists" (click)="openLists()">
+    Manage lists
+  </button>
+</div>

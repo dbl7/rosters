@@ -12,6 +12,7 @@ import { SharedModule } from '@shared/shared.module';
 import { CoreModule } from '@core/core.module';
 import { TrainingModule } from './training/training.module';
 import { AppRoutingModule } from './app-routing.module';
+import { MenuModule } from './menu/menu.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,7 @@ import { AppRoutingModule } from './app-routing.module';
     CoreModule,
     BrowserAnimationsModule,
     TrainingModule,
+    MenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
