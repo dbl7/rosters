@@ -1,1 +1,23 @@
-<p>settings-page works!</p>
+<mat-toolbar class="title">Settings</mat-toolbar>
+
+<mat-list class="options" fxFlex="grow" role="setting options">
+  <mat-list-item role="option">
+    <mat-icon matListIcon>invert_colors</mat-icon>
+    <div matLine fxLayoutAlign="space-between center">
+      <span>Dark mode</span>
+      <mat-slide-toggle color="primary" aria-label="dark mode"></mat-slide-toggle>
+    </div>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+
+  <mat-list-item role="option" routerLink="/">
+    <mat-icon matListIcon>lock</mat-icon>
+    <span matLine>Password</span>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+</mat-list>
+
+<button mat-button fxLayoutAlign="start" (click)="logout()">
+  <mat-icon>exit_to_app</mat-icon>
+  Logout
+</button>

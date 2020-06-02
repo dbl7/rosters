@@ -1,4 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+
+import { AuthService } from '@app/auth/auth.service';
 
 @Component({
   selector: 'rs-settings-page',
@@ -6,8 +8,10 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./settings-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SettingsPageComponent implements OnInit {
-  constructor() {}
+export class SettingsPageComponent {
+  constructor(private authService: AuthService) {}
 
-  public ngOnInit(): void {}
+  public logout(): void {
+    this.authService.logout();
+  }
 }
