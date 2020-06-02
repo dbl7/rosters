@@ -35,7 +35,15 @@ export class MenuComponent implements OnInit {
   }
 
   public openLists(): void {
-    this.router.navigate(['lists']);
+    this.openPage('lists');
+  }
+
+  public openSettings(): void {
+    this.openPage('settings');
+  }
+
+  public openPage(page: string): void {
+    this.router.navigate([page]);
     this.close();
   }
 
