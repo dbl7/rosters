@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
 
 import { Observable, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -36,5 +36,12 @@ export class ListService {
         };
       }),
     );
+  }
+
+  public addPhrase(listId: string, phrase: string): Promise<DocumentReference> {
+    const list = this.firestore.doc<List>(`lists/${listId}`);
+    const listItems = list.collection<ListItem>('items');
+
+    return listItems.add({ text: phrase, isHidden: false });
   }
 }

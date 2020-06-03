@@ -1,0 +1,12 @@
+.phrase-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+// rework with Material Typography
+.title {
+  font-size: 21px;
+  line-height: 32px;
+  padding: 30px 0;
+}

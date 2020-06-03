@@ -15,7 +15,9 @@
 ></rs-list-switch>
 
 <div class="actions" fxLayout="column" fxLayoutGap="8px">
-  <button mat-flat-button color="primary" aria-label="Add a new phrase">Add a new phrase</button>
+  <button mat-flat-button color="primary" aria-label="Add a new phrase" (click)="addPhrase()">
+    Add a new phrase
+  </button>
   <button mat-button color="primary" aria-label="Manage lists" (click)="openLists()">
     Manage lists
   </button>
