@@ -1,0 +1,16 @@
+<form class="phrase-form" [formGroup]="phraseForm" (ngSubmit)="addPhrase()">
+  <mat-toolbar class="title">Add a new phrase</mat-toolbar>
+
+  <mat-form-field appearance="outline">
+    <mat-select formControlName="list">
+      <mat-option *ngFor="let list of lists$ | async" [value]="list.id">{{ list.name }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" fxFlex="grow">
+    <textarea formControlName="phrase" matInput placeholder="Enter a phrase"></textarea>
+    <mat-error>Enter phrase</mat-error>
+  </mat-form-field>
+
+  <button mat-button color="primary" [disabled]="phraseForm.invalid">Submit</button>
+</form>
