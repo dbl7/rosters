@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from
 import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
-import { map, first } from 'rxjs/operators';
+import { first } from 'rxjs/operators';
 
 import { UserService } from '@core/services/user/user.service';
 import { ListService } from '@app/list/list.service';
@@ -36,14 +36,9 @@ export class MenuComponent implements OnInit {
   }
 
   public addPhrase(): void {
-    this.lists$
-      .pipe(
-        map((lists) => lists.find((list) => list.isActive)),
-        first(),
-      )
-      .subscribe((list) => {
-        this.openPage(['lists', list.id, 'add']);
-      });
+    this.userService.user$.pipe(first()).subscribe(({ activeListId }) => {
+      this.openPage(['lists', activeListId, 'add']);
+    });
   }
 
   public openLists(): void {
