@@ -18,7 +18,7 @@
   </mat-form-field>
 
   <button mat-flat-button color="primary" type="submit">Log in</button>
-  <div fxLayout="row" fxLayoutGap="16px">
+  <div fxLayout="row" fxLayoutGap="16px" [style.margin-top.px]="16">
     <button mat-flat-button color="accent" (click)="googleSignIn()" type="button" fxFlex>
       Google sign in
     </button>

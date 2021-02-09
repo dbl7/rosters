@@ -39,6 +39,8 @@
     </button>
   </mat-form-field>
 
-  <button mat-flat-button color="primary" type="submit">Sign up</button>
-  <a mat-flat-button [routerLink]="['/auth', 'login']" fxFlex>Login</a>
+  <div fxLayout="column" fxLayoutGap="16px">
+    <button mat-flat-button color="primary" type="submit">Sign up</button>
+    <a mat-flat-button [routerLink]="['/auth', 'login']" fxFlex>Login</a>
+  </div>
 </form>

@@ -1,0 +1,49 @@
+.mat-form-field.mat-form-field-appearance-outline {
+  line-height: inherit;
+
+  .mat-form-field-wrapper {
+    padding-bottom: 16px;
+  }
+
+  &.mat-form-field-has-label .mat-form-field-wrapper {
+    margin: 4px 0;
+  }
+
+  &:not(.mat-form-field-should-float) .mat-form-field-label {
+    top: 23px;
+  }
+
+  .mat-form-field-infix {
+    display: flex;
+    padding: 8px 0 12px 0;
+    border-top: 10px solid transparent;
+
+    .mat-form-field-label-wrapper {
+      top: -10px;
+      padding-top: 10px;
+    }
+  }
+
+  .mat-form-field-outline {
+    top: 3px;
+  }
+
+  &.mat-focused .mat-form-field-suffix {
+    color: mat-color($rs-primary, default);
+  }
+
+  .mat-form-field-suffix {
+    top: 6px;
+    right: -6px;
+  }
+
+  .mat-form-field-subscript-wrapper {
+    padding: 0;
+    margin-top: 4px;
+  }
+
+  input.mat-input-element,
+  textarea.mat-input-element {
+    margin-top: 0;
+  }
+}
